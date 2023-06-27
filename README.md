@@ -1,6 +1,8 @@
 # YandexMusic
 Приложение для интеграции яндекс музыки в LastFM + DiscordRPC
 
+⚠️Присутствует страшный код,острожнее!⚠️
+
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/UrbanSide/YandexMusic)
 ![GitHub release (latest by date)](https://img.shields.io/github/downloads/UrbanSide/YandexMusic/latest/total)
 ![GitHub issues](https://img.shields.io/github/issues/UrbanSide/YandexMusic)
