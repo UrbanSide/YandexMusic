@@ -51,7 +51,7 @@ namespace YandexMusic
                NOTE: 	If you are using Unity3D, you must use the full constructor and define
                         the pipe connection.
                */
-            if (!settings.isSelfBot)
+            if (!settings.isSelfBot && settings.userToken.Length>0)
             {
                 client = new DiscordRpcClient("848835233767751680");
 
@@ -90,7 +90,10 @@ namespace YandexMusic
         StreamWriter logWriter = new StreamWriter(logFilePath, true);
         private void StartSocketServer()
         {
+            try
+            {
             // Создание объекта процесса и настройка его параметров
+            var arg = AppDomain.CurrentDomain.BaseDirectory + @"Node\main.js " + Properties.Settings.Default.userToken;
             Process process = new Process();
             process.StartInfo.FileName = selfFilePath;
             process.StartInfo.Arguments = arg;
@@ -99,21 +102,29 @@ namespace YandexMusic
             process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             // Перенаправление стандартного потока вывода процесса в StreamReader
             process.StartInfo.RedirectStandardOutput = true;
-            process.OutputDataReceived += (sender, e) => {
-                if (e.Data.Contains("Server started"))
-                {
-                    Debug.WriteLine("=======================================ЗАПУСКАЕМ СОКЕТ=======================================");
-                    clientSocket = new ClientSocket();
-                    clientSocket.Connect("localhost", 8800);
-                    dBot.Start();
-                }
-                logWriter.WriteLine(e.Data);
-                logWriter.Flush();
-            };
 
-            // Запуск процесса и начало асинхронного чтения его стандартного потока вывода
-            process.Start();
-            process.BeginOutputReadLine();
+                process.OutputDataReceived += (sender, e) =>
+                {
+                    if (e.Data.Contains("Server started"))
+                    {
+                        Debug.WriteLine("=======================================ЗАПУСКАЕМ СОКЕТ=======================================");
+                        clientSocket = new ClientSocket();
+                        clientSocket.Connect("localhost", 8800);
+                        dBot.Start();
+                    }
+                    logWriter.WriteLine(e.Data);
+                    logWriter.Flush();
+                };
+
+                // Запуск процесса и начало асинхронного чтения его стандартного потока вывода
+                process.Start();
+                process.BeginOutputReadLine();
+            }
+            catch(Exception ex)
+            {
+                logWriter.WriteLine(ex.Message);
+                logWriter.Flush();
+            }
         }
         async void trackData_TickAsync(object sender, EventArgs e)
         {
