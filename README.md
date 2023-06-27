@@ -4,6 +4,7 @@
 ![image](https://github.com/UrbanSide/YandexMusic/assets/26259129/d0221d16-e3e9-4101-abb9-5d2994672ae7)
 ![image](https://github.com/UrbanSide/YandexMusic/assets/26259129/73aea4c0-cd42-48dc-b32e-85e74f0960e9)
 —————————————————
+
 Поддержать разработку проекта сбербанк(СБП) :
 5469 9804 7111 9954 Даниил
 
