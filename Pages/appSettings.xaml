@@ -1,0 +1,31 @@
+﻿<mah:MetroWindow 
+        x:Class="YandexMusic.Pages.appSettings"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YandexMusic.Pages"
+        mc:Ignorable="d"
+        Topmost="True"
+        Title="Настройки" Height="300" Width="370" WindowStyle="ToolWindow" ResizeMode="NoResize" Closing="SaveSettings">
+    <Grid>
+        <GroupBox x:Name="Settings"  Header="Общие настройки" Margin="0,0,0,8">
+            <Grid>
+                <ComboBox x:Name="Style" DropDownClosed="ChangeColor" SelectedIndex="0" Margin="159,6,10,0" Height="26" VerticalAlignment="Top" Width="NaN">
+                    <ListBoxItem Content="Steel"/>
+                    <ListBoxItem Content="Amber"/>
+                    <ListBoxItem Content="Red"/>
+                    <ListBoxItem Content="Green"/>
+                    <ListBoxItem Content="Orange"/>
+                    <ListBoxItem Content="Crimson"/>
+                    <ListBoxItem Content="Yellow"/>
+                </ComboBox>
+                <Label Content="Выбор темы оформления:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,6,0,0"/>
+                <mah:ToggleSwitch x:Name="themeType" Height="62" Header="Цвет темы" Margin="0,37,0,0" VerticalAlignment="Top" Width="350" OffContent="Темная" OnContent="Светлая" IsEnabled="False" />
+                <TextBox x:Name="DSCToken" HorizontalAlignment="Center" Margin="0,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="350" AutomationProperties.HelpText="Discord Token" mah:TextBoxHelper.Watermark="Discord Token" Height="62"/>
+                <mah:ToggleSwitch x:Name="DSBot" Height="65" Header="Статус 'слушает'" Margin="5,166,5,0" VerticalAlignment="Top" Width="350" OffContent="Выключен" OnContent="Включен"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</mah:MetroWindow>

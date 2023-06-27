@@ -1,0 +1,33 @@
+﻿<mah:MetroWindow x:Class="YandexMusic.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+                 xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                 Title="YaMusic"
+                 Width="800"
+                 Height="450"
+                 WindowStartupLocation="CenterScreen">
+    <mah:MetroWindow.LeftWindowCommands>
+        <mah:WindowCommands>
+            <Button x:Name="InfoButton" ToolTip="Информация о приложении">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Res/icon.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+        </mah:WindowCommands>
+    </mah:MetroWindow.LeftWindowCommands>
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            <Button  x:Name="LastFMButton" ToolTip="Настройки LastFM" Content="{iconPacks:Modern Kind=SocialLastfm}" Click="openLastFM"/>
+            <Button  x:Name="SettingsButton" ToolTip="Настройки приложения" Content="{iconPacks:Modern Kind=Settings}" Click="openSettings"/>
+            <Button  x:Name="BeerButton" ToolTip="Благодарности и поддержка" Content="{iconPacks:Modern Kind=DrinksBeerGuinness}" Click="openBeer"/>
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
+    <Grid>
+        <wv2:WebView2 Name="webView" Visibility="Hidden"/>
+        <Image x:Name="loadingScreen" Source="/Res/icon.png" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </Grid>
+</mah:MetroWindow>
