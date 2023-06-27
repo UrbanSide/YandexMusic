@@ -10,6 +10,8 @@
 Поддержать разработку проекта сбербанк(СБП) :
 5469 9804 7111 9954 Даниил
 
+Наш ТГ канал: https://t.me/YDiscordMusic
+
 —————————————————
 ![image](https://github.com/UrbanSide/YandexMusic/assets/26259129/5b12c8f4-7fec-4a4c-8851-8fd0514854e9)
 ![image](https://github.com/UrbanSide/YandexMusic/assets/26259129/d0221d16-e3e9-4101-abb9-5d2994672ae7)
