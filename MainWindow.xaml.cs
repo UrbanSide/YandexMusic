@@ -91,7 +91,6 @@ namespace YandexMusic
         private void StartSocketServer()
         {
             // Создание объекта процесса и настройка его параметров
-            var arg = AppDomain.CurrentDomain.BaseDirectory + @"Node\main.js " + settings.userToken; //Properties.Settings.Default.userToken;
             Process process = new Process();
             process.StartInfo.FileName = selfFilePath;
             process.StartInfo.Arguments = arg;
